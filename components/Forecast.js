@@ -5,7 +5,7 @@ export default function Forecast(props) {
     return (
         <View>
             <Text style={styles.mainText}>{props.main}</Text>
-            <Text>{props.description}</Text>
+            <Text style={styles.desText}>{props.description}</Text>
             <View style={styles.cel}>
                 <Text style={styles.tempText}>{props.temp}</Text>
                 <Text style={styles.cText}> °C</Text>
@@ -19,11 +19,19 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         flexDirection: 'column',
-        backgroundColor: 'rgba(52, 52, 52, 0.8)',
         fontSize: 30,
+        paddingBottom: 30
+    },
+    desText:{
+        flexDirection: 'column',
+        alignItems: 'center',
+        paddingBottom: 30
     },
     cel:{
         flexDirection: 'row',
+        justifyContent: 'center',
+        paddingBottom: 20
+
     },
     tempText: {
         fontSize: 30,
