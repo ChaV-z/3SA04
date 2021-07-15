@@ -1,23 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet ,View } from 'react-native';
 import Weather from './components/Weather';
-import Constants from 'expo-constants';
+import constants from 'expo-constants'
 
 export default function App() {
-  const doIt = () => {
-    console.log("Hello from console")
-  }
+
   return (
-    <View styles={styles.container}>
-      <Weather zipCode="95110"/>
+    <View style={styles.container}>
+      <Weather zipCode="90110" />
       <StatusBar style="auto" />
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Constants.statusBarHeight
+    paddingTop : constants.statusBarHeight
   },
 });
