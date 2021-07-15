@@ -28,10 +28,10 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     bgText: {
-        backgroundColor: 'black',
         width: '100%',
         alignItems: 'center',
         flexDirection: 'column',
+        backgroundColor: 'rgba(52, 52, 52, 0.8)',
     }
 });
 
