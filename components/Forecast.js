@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         paddingBottom: 20
-
     },
     tempText: {
         fontSize: 30,
