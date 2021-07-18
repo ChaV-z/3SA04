@@ -11,14 +11,17 @@ const availableZipItems = [
 ]
 
 const ZipItem = ({place, code, navigation}) => (
+    
     <TouchableHighlight onPress={() => {
         navigation.navigate('Weather', {zipCode: code})
     }}>
-        <View style={styles.ZipItem}>
-            <ImageBackground source={require('../images/clouds.jpg')} style={styles.backdrop}>
-                <Text>{place}</Text>
-                <Text>{code}</Text>
-            </ImageBackground>
+        
+        <View>
+            <View style={styles.ZipItem}>
+                <Text style={styles.text}>{place}</Text>
+                <Text style={styles.text}>{code}</Text>
+            </View>
+            <View style={styles.line}></View>
         </View>
     </TouchableHighlight>
 )
@@ -26,30 +29,51 @@ const ZipItem = ({place, code, navigation}) => (
 export default function ZipCodeScreen() {
     const navigation = useNavigation()
     return (
-        <FlatList 
-            data = {availableZipItems}
-            keyExtractor = {item => item.code}
-            renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
-        />
+        <>
+            <View style={styles.header}>
+                <Text style={styles.headerText}>City</Text>
+                <Text style={styles.headerText}>Zip code</Text>
+            </View>
+            <View style={styles.line_header}></View>
+            <FlatList
+                data = {availableZipItems}
+                keyExtractor = {item => item.code}
+                renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
+            />
+        </>
     )
 }
 
 const styles = StyleSheet.create({
-    backdrop: {
-        // alignItems: 'center',
-        // flexDirection: 'column',
-        width: '100%',
-        height: '100%',
+    header: {
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        padding: 15,
+        backgroundColor: 'white'
+      
     },
+    headerText: {
+        fontSize: 16,
+        fontWeight: 'bold',
+    }, 
     ZipItem: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        padding: 15,
+        backgroundColor: 'white',
     },
-    zipPlace: {
-        flex:1,
+    text: {
+        fontSize: 16,
     },
-    zipCode: {
-        flex: 1,
+    line: {
+        borderBottomColor: 'rgba(255, 255, 255, 0.01)',
+        marginTop: 1,
+        borderBottomWidth: 1,
     },
+    line_header: {
+        borderBottomColor: 'rgba(255, 255, 255, 0.05)',
+        marginTop: 1,
+        borderBottomWidth: 2,
+    }
 })

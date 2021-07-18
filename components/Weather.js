@@ -52,8 +52,10 @@ export default function Weather(props) {
             <View style={{width: windowWidth, height: windowHeight}}>
                 <ImageBackground source={require('../images/clouds.jpg')} style={styles.backdrop}>
                 {/* <ImageBackground source={require('../images/rain.jpg')} style={styles.backdrop}> */}
-                    {/* <Text style={styles.codeText}>Zip Code is {props.zipCode}</Text> */}
-                    <Forecast {...forecastInfo} />
+                    <View style={styles.bg}>
+                        <Text style={styles.codeText}>Zip Code is {props.zipCode}</Text>
+                        <Forecast {...forecastInfo} />
+                    </View>
                 </ImageBackground>
             </View>
         </>
@@ -62,6 +64,16 @@ export default function Weather(props) {
 const styles = StyleSheet.create({
     backdrop: {
         flex: 1,
+    },
+    bg: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+        padding: 20,
+    },
+    codeText: {
+        marginTop: 160,
+        color: 'white',
+        fontWeight: 'bold',
     },
 });
 

@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native'
 
 export default function Forecast(props) {
     return (
-        <View style={styles.bg}>
+        <>
             <View style={styles.topFrame}>
                 <View>
                     <Text style={styles.nameText}>{props.name}</Text>
@@ -39,19 +39,13 @@ export default function Forecast(props) {
                     <Text style={styles.infoText}>%</Text>
                 </View>
             </View>
-        </View>
+        </>
     )
 }
 
 const styles = StyleSheet.create({
-    bg: {
-        flex: 1,
-        backgroundColor: 'rgba(0, 0, 0, 0.2)',
-        padding: 20,
-    },
     topFrame: {
         flex: 1,
-        marginTop: 160,
         color: 'white',
         justifyContent: 'space-between',
     },
@@ -62,7 +56,7 @@ const styles = StyleSheet.create({
     },
     tempText: {
         color: 'white',
-        fontSize: 85,
+        fontSize: 80,
     },
     mainText: {
         color: 'white',
