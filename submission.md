@@ -4,11 +4,11 @@ _น.ส.คริสต์มาส วีรชิตอรกานต์ 621
 * เพิ่มหัวข้อ City และ Zip code
 * แต่งให้มีเส้นขอบ
 * เพิ่มจังหวัด
-![alt text](./images/home.jpg "home")
+![alt text](./images/home.jpg "Home")
 ## รูปพื้นหลังเปลี่ยนตามชนิดสภาพอากาศ
 * ถ้าชนิดเป็น Clouds พื้นหลังจะเป็นรูปท้องฟ้ามีเมฆ
 * ถ้าชนิดเป็น Rain พื้นหลังจะเป็นรูปฝนตก
-![alt text](./images/Hatyai.jpg "Hatyai")
+![alt text](./images/Hatyai.jpg "Songkla")
 ![alt text](./images/NakornSawan.jpg "Nakorn Sawan")
 ## แสดงรายละเอียดข้อมูลเพิ่มเติม
 ### ดึงข้อมูลสภาพอากาศมาแสดงเพิ่มเติมคือ
@@ -16,13 +16,13 @@ _น.ส.คริสต์มาส วีรชิตอรกานต์ 621
 * แสดงข้อมูลความกดดันอากาศ
 * แสดงความเร็วลม
 * แสดงความชื้น
-![alt text](./images/chao.jpg "chao")
+![alt text](./images/chao.jpg "Chonburi")
 ## แสดงไอคอน
 * แสดงไอคอนที่เปลี่ยนไปตามสภาพอากาศ
 * สภาพอากาศแบบ _scanttered clouds_
-![alt text](./images/cm.jpg "cm")
+![alt text](./images/cm.jpg "Chiang Mai")
 * สภาพอากาศแบบ _overcast clouds_
-![alt text](./images/kk.jpg "kk")
+![alt text](./images/kk.jpg "Khonkaen")
 ![alt text](./images/Trang.jpg "Trang")
 * สภาพอากาศแบบ _loght rain_
 ![alt text](./images/Pathumthani.jpg "Pathumthani")
