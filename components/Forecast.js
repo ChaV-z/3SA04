@@ -17,33 +17,36 @@ export default function Forecast(props) {
                 </View>
             </View>
             <View style={styles.line}></View>
-            <View style={styles.detail}></View>
+            <View style={styles.bottomFrame}>
+                <View style={styles.detail}>
+                    <Text style={styles.infoText}>Feels like</Text>
+                    <Text style={styles.infoText, {fontSize: 24, color: 'white'}}>{props.feels_like}</Text>
+                    <Text style={styles.infoText}>°C</Text>
+                </View>
+                <View style={styles.detail}>
+                    <Text style={styles.infoText}>Pressure</Text>
+                    <Text style={styles.infoText, {fontSize: 24, color: 'white'}}>{props.pressure}</Text>
+                    <Text style={styles.infoText}>hPa</Text>
+                </View>
+                <View style={styles.detail}>
+                    <Text style={styles.infoText}>Wind</Text>
+                    <Text style={styles.infoText, {fontSize: 24, color: 'white'}}>{props.wind}</Text>
+                    <Text style={styles.infoText}>km/h</Text>
+                </View>
+                <View style={styles.detail}>
+                    <Text style={styles.infoText}>humidity</Text>
+                    <Text style={styles.infoText, {fontSize: 24, color: 'white'}}>{props.humidity}</Text>
+                    <Text style={styles.infoText}>%</Text>
+                </View>
+            </View>
         </View>
-        //     <Text style={styles.mainText}>{props.main}</Text>
-        //     <Text style={styles.desText}>{props.description}</Text>
-        //     <View style={styles.cel}>
-        //         <Text style={styles.tempText}>{props.temp}</Text>
-        //         <Text style={styles.cText}> °C</Text>
-        //     </View>
-        //     <Text>{props.feels_like}</Text>
-        //     <Text>°C</Text>
-        //     <Text>Pressure</Text>
-        //     <Text>{props.pressure}</Text>
-        //     <Text>hPa</Text>
-        //     <Text>Wind</Text>
-        //     <Text>{props.wind}</Text>
-        //     <Text>km/h</Text>
-        //     <Text>Humidity</Text>
-        //     <Text>{props.humidity}</Text>
-        //     <Text>%</Text>
-        // </View>
     )
 }
 
 const styles = StyleSheet.create({
     bg: {
         flex: 1,
-        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
         padding: 20,
     },
     topFrame: {
@@ -53,54 +56,43 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     nameText: {
-        color: '#fff',
+        color: 'white',
         fontSize: 30,
         fontWeight: 'bold',
     },
     tempText: {
-        color: '#fff',
+        color: 'white',
         fontSize: 85,
     },
     mainText: {
-        color: '#fff',
+        color: 'white',
         fontWeight: 'bold',
         fontSize: 34,
         marginLeft: 10,
     },
     desText: {
-        color: '#fff',
+        color: 'white',
         fontWeight: 'bold',
         fontSize: 24,
         marginLeft: 10,
     },
     line: {
-        borderBottomColor: 'rgba(255, 255, 255, 0.7)',
+        borderBottomColor: 'rgba(255, 255, 255, 0.3)',
         marginTop: 20,
         borderBottomWidth: 1,
     },
-  
-    // mainText: {
-    //     width: '100%',
-    //     alignItems: 'center',
-    //     flexDirection: 'column',
-    //     fontSize: 30,
-    //     paddingBottom: 30
-    // },
-    // desText:{
-    //     flexDirection: 'column',
-    //     alignItems: 'center',
-    //     paddingBottom: 30
-    // },
-    // cel:{
-    //     flexDirection: 'row',
-    //     justifyContent: 'center',
-    //     paddingBottom: 20
-    // },
-    // tempText: {
-    //     fontSize: 30,
-    // },
-    // cText: {
-    //     textAlignVertical: 'center'
-    // }
-
+    bottomFrame: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginVertical: 20,
+        marginBottom: 50
+    },
+    detail: {
+        alignItems: 'center',
+    },
+    infoText: {
+        color: 'white',
+        fontSize: 14,
+        fontWeight: 'bold',
+    }
 });

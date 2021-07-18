@@ -62,19 +62,7 @@ export default function Weather(props) {
 const styles = StyleSheet.create({
     backdrop: {
         flex: 1,
-        // flexDirection: 'column',
-        // width: '100%',
-        // height: '100%',
     },
-    // bgText: {
-    //     width: '100%',
-    //     alignItems: 'center',
-    //     flexDirection: 'column',
-    //     backgroundColor: 'rgba(52, 52, 52, 0.8)',
-    // },
-    // codeText:{
-    //     padding: 20
-    // }
 });
 
 
