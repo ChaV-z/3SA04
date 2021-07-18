@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import {ImageBackground, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import {ImageBackground, StatusBar, StyleSheet, Text, View, useWindowDimensions, Image } from 'react-native';
 import Forecast from './Forecast';
 
 export default function Weather(props) {
     useEffect(() => {
-        console.log(`fetching data with zipCode = ${props.zipCode}`)
+        // console.log(`fetching data with zipCode = ${props.zipCode}`)
         if (props.zipCode) {
             fetch(`http://api.openweathermap.org/data/2.5/weather?q=${props.zipCode},th&units=metric&APPID=3b82f284f9633c124c8f15aa96890318`)
             .then((response) => response.json())
@@ -18,6 +18,7 @@ export default function Weather(props) {
                     pressure: json.main.pressure,
                     humidity: json.main.humidity,
                     wind: json.wind.speed,
+                    icon: json.weather[0].icon,
                 }); 
              })
             .catch((error) => {
@@ -35,14 +36,17 @@ export default function Weather(props) {
         pressure: 0,
         humidity: 0,
         wind: 0,
+        icon: '-'
     });
+
     let bgImg
     if (forecastInfo.main === 'Clouds'){
         bgImg = require('../images/clouds.jpg')
     }
     else if (forecastInfo.main === 'Rain'){
-        bgImg = require('../images/rain.jpg')
+        bgImg = require('../images/rain3.jpg')
     }
+
     const {width: windowWidth, height: windowHeight} = useWindowDimensions();
 
     return (

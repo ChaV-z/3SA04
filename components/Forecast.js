@@ -1,7 +1,13 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'  
+import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native'  
+
 
 export default function Forecast(props) {
+
+    console.log(props.icon)
+    let icon = props.icon
+    const iconurl = 'http://openweathermap.org/img/wn/'+props.icon+'.png'
+    console.log(icon)
     return (
         <>
             <View style={styles.topFrame}>
@@ -13,7 +19,10 @@ export default function Forecast(props) {
                     <View>
                         <Text style={styles.mainText}>{props.main}</Text>
                     </View>
-                    <Text style={styles.desText}>{props.description}</Text>
+                    <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                        <Image style={{width: 45, height:45, }} source={{uri:iconurl}}/>
+                        <Text style={styles.desText}>{props.description}</Text>
+                    </View>
                 </View>
             </View>
             <View style={styles.line}></View>
@@ -63,6 +72,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 34,
         marginLeft: 10,
+    },
+    weatherIcon: {
+        width: 34,
+        height: 34,
+        backgroundColor: 'grey'
     },
     desText: {
         color: 'white',
