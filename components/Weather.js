@@ -36,24 +36,23 @@ export default function Weather(props) {
         humidity: 0,
         wind: 0,
     });
-    // const bgImg = require('../images/clouds.jpg')
-    // console.log(">",bgImg)
-    // if (forecastInfo.main === 'Clouds')
-    //     {icon = require('../images/clouds.jpg')
-    //     console.log(icon)}
-    // else if (forecastInfo.main === 'Rain')
-    //     {bgImg = require('../images/rain.jpg')
-    //     console.log(bgImg)}
+    let bgImg
+    if (forecastInfo.main === 'Clouds'){
+        bgImg = require('../images/clouds.jpg')
+    }
+    else if (forecastInfo.main === 'Rain'){
+        bgImg = require('../images/rain.jpg')
+    }
     const {width: windowWidth, height: windowHeight} = useWindowDimensions();
 
     return (
         <>
             <StatusBar barStyle='auto'/>
+            { }
             <View style={{width: windowWidth, height: windowHeight}}>
-                <ImageBackground source={require('../images/clouds.jpg')} style={styles.backdrop}>
-                {/* <ImageBackground source={require('../images/rain.jpg')} style={styles.backdrop}> */}
+                <ImageBackground source={bgImg} style={styles.backdrop}>
                     <View style={styles.bg}>
-                        <Text style={styles.codeText}>Zip Code is {props.zipCode}</Text>
+                        <Text style={styles.codeText}>Zip code: {props.zipCode}</Text>
                         <Forecast {...forecastInfo} />
                     </View>
                 </ImageBackground>
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     codeText: {
-        marginTop: 160,
+        marginTop: 100,
         color: 'white',
         fontWeight: 'bold',
     },
