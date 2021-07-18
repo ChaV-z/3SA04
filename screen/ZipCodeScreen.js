@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
+import { FlatList, StyleSheet, Text, TouchableHighlight, View, ImageBackground } from 'react-native'
 import { useNavigation } from '@react-navigation/core'
 
 const availableZipItems = [
@@ -15,8 +15,10 @@ const ZipItem = ({place, code, navigation}) => (
         navigation.navigate('Weather', {zipCode: code})
     }}>
         <View style={styles.ZipItem}>
-            <Text>{place}</Text>
-            <Text>{code}</Text>
+            <ImageBackground source={require('../images/bg1.jpg')} style={styles.backdrop}>
+                <Text>{place}</Text>
+                <Text>{code}</Text>
+            </ImageBackground>
         </View>
     </TouchableHighlight>
 )
@@ -33,6 +35,12 @@ export default function ZipCodeScreen() {
 }
 
 const styles = StyleSheet.create({
+    backdrop: {
+        // alignItems: 'center',
+        // flexDirection: 'column',
+        width: '100%',
+        height: '100%',
+    },
     ZipItem: {
         flex: 1,
         flexDirection: 'row',
@@ -43,5 +51,5 @@ const styles = StyleSheet.create({
     },
     zipCode: {
         flex: 1,
-    }
+    },
 })
