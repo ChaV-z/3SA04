@@ -15,7 +15,7 @@ const ZipItem = ({place, code, navigation}) => (
         navigation.navigate('Weather', {zipCode: code})
     }}>
         <View style={styles.ZipItem}>
-            <ImageBackground source={require('../images/bg1.jpg')} style={styles.backdrop}>
+            <ImageBackground source={require('../images/clouds.jpg')} style={styles.backdrop}>
                 <Text>{place}</Text>
                 <Text>{code}</Text>
             </ImageBackground>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {ImageBackground, StyleSheet, Text, View } from 'react-native';
+import {ImageBackground, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import Forecast from './Forecast';
 
 export default function Weather(props) {
@@ -36,34 +36,45 @@ export default function Weather(props) {
         humidity: 0,
         wind: 0,
     });
+    // const bgImg = require('../images/clouds.jpg')
+    // console.log(">",bgImg)
+    // if (forecastInfo.main === 'Clouds')
+    //     {icon = require('../images/clouds.jpg')
+    //     console.log(icon)}
+    // else if (forecastInfo.main === 'Rain')
+    //     {bgImg = require('../images/rain.jpg')
+    //     console.log(bgImg)}
+    const {width: windowWidth, height: windowHeight} = useWindowDimensions();
 
     return (
-        <View>
-            <ImageBackground source={require('../images/bg1.jpg')} style={styles.backdrop}>
-                <View style={styles.bgText}>
-                    <Text style={styles.codeText}>Zip Code is {props.zipCode}</Text>
+        <>
+            <StatusBar barStyle='auto'/>
+            <View style={{width: windowWidth, height: windowHeight}}>
+                <ImageBackground source={require('../images/clouds.jpg')} style={styles.backdrop}>
+                {/* <ImageBackground source={require('../images/rain.jpg')} style={styles.backdrop}> */}
+                    {/* <Text style={styles.codeText}>Zip Code is {props.zipCode}</Text> */}
                     <Forecast {...forecastInfo} />
-                </View>
-            </ImageBackground>
-        </View>
+                </ImageBackground>
+            </View>
+        </>
     );
 }
 const styles = StyleSheet.create({
     backdrop: {
-        alignItems: 'center',
-        flexDirection: 'column',
-        width: '100%',
-        height: '100%',
+        flex: 1,
+        // flexDirection: 'column',
+        // width: '100%',
+        // height: '100%',
     },
-    bgText: {
-        width: '100%',
-        alignItems: 'center',
-        flexDirection: 'column',
-        backgroundColor: 'rgba(52, 52, 52, 0.8)',
-    },
-    codeText:{
-        padding: 20
-    }
+    // bgText: {
+    //     width: '100%',
+    //     alignItems: 'center',
+    //     flexDirection: 'column',
+    //     backgroundColor: 'rgba(52, 52, 52, 0.8)',
+    // },
+    // codeText:{
+    //     padding: 20
+    // }
 });
 
 
