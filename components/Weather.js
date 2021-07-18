@@ -44,7 +44,7 @@ export default function Weather(props) {
         bgImg = require('../images/clouds.jpg')
     }
     else if (forecastInfo.main === 'Rain'){
-        bgImg = require('../images/rain3.jpg')
+        bgImg = require('../images/rain.jpg')
     }
 
     const {width: windowWidth, height: windowHeight} = useWindowDimensions();

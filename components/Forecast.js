@@ -6,7 +6,7 @@ export default function Forecast(props) {
 
     console.log(props.icon)
     let icon = props.icon
-    const iconurl = 'http://openweathermap.org/img/wn/'+props.icon+'.png'
+    const iconurl = 'http://openweathermap.org/img/wn/'+props.icon+'@4x.png'
     console.log(icon)
     return (
         <>
@@ -16,9 +16,9 @@ export default function Forecast(props) {
                 </View>
                 <View>
                     <Text style={styles.tempText}>{props.temp} °C</Text>
-                    <View>
+                    {/* <View>
                         <Text style={styles.mainText}>{props.main}</Text>
-                    </View>
+                    </View> */}
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
                         <Image style={{width: 45, height:45, }} source={{uri:iconurl}}/>
                         <Text style={styles.desText}>{props.description}</Text>
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     },
     nameText: {
         color: 'white',
-        fontSize: 30,
+        fontSize: 40,
         fontWeight: 'bold',
     },
     tempText: {
